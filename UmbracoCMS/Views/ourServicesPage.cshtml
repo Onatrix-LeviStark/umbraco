@@ -1,0 +1,251 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+}
+
+
+<section class="atf">
+    <img src="./images/earth-down.png" class="earth-down"></img>
+    <img src="./images/earth-up.png" class="earth-up"></img>
+
+    <div class="atf-content">
+      <h1>@Model.Value("pageTitle")</h1>
+      <nav class="breadcrumb-nav">
+        <a href="home.html">Home</a>
+        <img src="./images/Arrow-Vector-Black.svg"></img>
+        <a href="#">Our services</a>
+      </nav>
+    </div>
+  </section>
+  <section id="our-services-section">
+    <div class="container page-section">
+      <h2>We Provide The Solutions<br>To Grow Your Business Faster</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h4 class="card-heading">Risk Management</h4>
+          <div class="card-image">
+            <img src="./images/services-1.png"></img>            
+          </div>
+          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        </div>
+        <div class="card">
+          <h4 class="card-heading">Bonds & Commodities</h4>
+          <div class="card-image">
+            <img src="./images/services-2.png"></img>            
+          </div>
+          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        </div>
+        <div class="card">
+          <h4 class="card-heading">Assurance & Audits</h4>
+          <div class="card-image">
+            <img src="./images/services-3.png"></img>            
+          </div>
+          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        </div>
+        <div class="card">
+          <h4 class="card-heading">Tax and Trusts</h4>
+          <div class="card-image">
+            <img src="./images/services-4.png"></img>            
+          </div>
+          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        </div>
+        <div class="card">
+          <h4 class="card-heading">Financial Advisor</h4>
+          <div class="card-image">
+            <img src="./images/services-5.png"></img>            
+          </div>
+          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        </div>
+        <div class="card">
+          <h4 class="card-heading">Statistic Advisors</h4>
+          <div class="card-image">
+            <img src="./images/services-6.png"></img>            
+          </div>
+          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact-details-section">
+    <div class="container">
+      <div class="img-container">
+        <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
+        <img class="img-person" src="./images/contact-details-section-person.png"></img>
+      </div>
+      <div class="section-body">
+        <h2>Let us know about <br>your next project</h2>
+        <div class="element-group">
+          <img src="./images/Icon address.png"></img>
+          <div class="text-group">
+            <strong>Office location</strong>
+            <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+          </div>
+        </div>
+        <div class="element-group">
+          <img src="./images/Icon phone.png"></img>
+          <div class="text-group">
+            <strong>Phone number</strong>
+            <p>+46 8 123 456 75</p>
+          </div>
+        </div>
+        <div class="element-group">
+          <img src="./images/Icon email.png"></img>
+          <div class="text-group">
+            <strong>E-mail address</strong>
+            <p>sales@onatrix.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	<style>
+		.atf {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--clr-gray-secondary);
+
+  .earth-down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .earth-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .atf-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      > :nth-child(1) {
+        color: var(--clr-text-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      img {
+        height: 10px;
+      }
+
+      > :nth-child(3) {
+        color: var(--clr-beige-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+#our-services-section {
+  background-color: var(--clr-bg-white);
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+
+    .grid-container {
+      margin-top: 1rem;
+      text-align: start;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 2rem;
+
+      .card {
+        background-color: white;
+        .card-heading {
+          padding: 2rem;
+          font-size: 15pt;
+          font-weight: 600;
+        }
+        .card-image {
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+          }
+        }
+        .card-body {
+          padding: 2rem;
+          font-size: var(--fs-small);
+        }
+      }
+    }
+  }
+}
+
+#contact-details-section {
+  background-color: var(--clr-gray-secondary);
+  .container {
+    display: flex;
+
+    .img-container {
+      position: relative;
+      width: 50%;
+
+      .img-vector {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .img-person {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+    .section-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 11rem 0;
+      padding-left: 3rem;
+
+      .element-group {
+        display: flex;
+        gap: 1rem;
+
+        img {
+          max-height: 25px;
+        }
+        .text-group {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          strong {
+            display: block;
+          }
+          p {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+	</style>

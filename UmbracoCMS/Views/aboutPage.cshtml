@@ -1,0 +1,362 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+}
+
+<section class="atf">
+    <img src="./images/earth-down.png" class="earth-down"></img>
+    <img src="./images/earth-up.png" class="earth-up"></img>
+
+    <div class="atf-content">
+      <h1>@Model.Value("pageTitle")</h1>
+      <nav class="breadcrumb-nav">
+        <a href="home.html">Home</a>
+        <img src="./images/Arrow-Vector-Black.svg"></img>
+        <a href="#">About</a>
+      </nav>
+    </div>
+    
+  </section>
+
+  <section id="about-us-section" class="page-section">
+    <div class="container">
+      <div class="img-container">
+        <img src="./images/tina-fox1.png"></img>
+        <p>Tina Fox - CEO & Founder at Onatrix</p>
+      </div>
+      <div class="text-container">
+        <blockquote>“We have over 25 years of experience providing expert financial advice to both businesses and individuals.”</blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus a massa lobortis sollicitudin. Cras ut nulla quam. Maecenas tempus felis quis lorem malesuada vehicular.</p>
+        <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum.</p>
+        <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+        <p>Phasellus laoreet, sapien id euismod hendrerit, nibh ligula hendrerit libero, sit amet hendrerit elit turpis nec velit. Praesent tincidunt nisi at vulputate ornare. Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum elit at urna dapibus viverra. Etiam lectus libero, condimentum eget justo ac, accumsan suscipit libero.</p>
+        <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum  i commodo, eros quis consequat consequat.</p>
+        <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+        <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="review-section" class="page-section">
+    <div class="container">
+      <div class="section-heading">
+        <h3>GREAT REVIEWS FOR OUR SERVICES</h3>
+        <h2>Trusted by some <br>Biggest names</h2>
+      </div>
+      <div class="section-body">
+        <p>Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals.</p>
+        <img src="./images/Rating.png" class="rating-img"></img>
+      </div>
+      <div class="section-footer">
+        <p>Kevin Gardner</p>
+        <p class="rating-company">Swedbank</p>
+      </div>
+    </div>
+    <div class="img-container">
+      <img src="./images/kevin-gardner.png"></img>
+    </div>
+  </section>
+
+  <section id="our-experts-section" class="page-section container">
+    <div class="section-heading">
+      <h3>OUR EXPERTS</h3>
+      <h2>A team of professionals <br>with years of experience</h2>
+    </div>
+    <div class="experts-grid">
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-1.png"></img>
+        <div class="card-body">
+          <h4>Brandon Newton</h4>
+          <p>Financial Advisor at Onatrix</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-2.png"></img>
+        <div class="card-body">
+          <h4>AJ Carter</h4>
+          <p>Financial Advisor at Onatrix</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-3.png"></img>
+        <div class="card-body">
+          <h4>Aaron Lambert</h4>
+          <p>Financial Advisor at Onatrix</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-4.png"></img>
+        <div class="card-body">
+          <h4>Tina Fox</h4>
+          <p>CEO & Founder at Onatrix</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-5.png"></img>
+        <div class="card-body">
+          <h4>Brandon Kerr</h4>
+          <p> CFO & Co-Founderat Onatrix</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-6.png"></img>
+        <div class="card-body">
+          <h4>Miranda Dayton</h4>
+          <p>Head of HR at Onatrix</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="card-img" src="./images/experts/expert-7.png"></img>
+        <div class="card-body">
+          <h4>Kevin Gardner</h4>
+          <p>Banking Advisor at Swedbank</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-details-section">
+    <div class="container">
+      <div class="img-container">
+        <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
+        <img class="img-person" src="./images/contact-details-section-person.png"></img>
+      </div>
+      <div class="section-body">
+        <h2>Let us know about <br>your next project</h2>
+        <div class="element-group">
+          <img src="./images/Icon address.png"></img>
+          <div class="text-group">
+            <strong>Office location</strong>
+            <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+          </div>
+        </div>
+        <div class="element-group">
+          <img src="./images/Icon phone.png"></img>
+          <div class="text-group">
+            <strong>Phone number</strong>
+            <p>+46 8 123 456 75</p>
+          </div>
+        </div>
+        <div class="element-group">
+          <img src="./images/Icon email.png"></img>
+          <div class="text-group">
+            <strong>E-mail address</strong>
+            <p>sales@onatrix.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	<style>
+
+.atf {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--clr-gray-secondary);
+
+  .earth-down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .earth-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .atf-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      > :nth-child(1) {
+        color: var(--clr-text-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      img {
+        height: 10px;
+      }
+
+      > :nth-child(3) {
+        color: var(--clr-beige-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+#about-us-section {
+  .container {
+    display: flex;
+    gap: 4rem;
+    .img-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      blockquote {
+        font-size: 16pt;
+        font-style: italic;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+#review-section {
+  position: relative;
+  background-color: var(--clr-gray-secondary);
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .section-body {
+      p {
+        font-size: 16pt;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--clr-text-secondary);
+        max-width: 550px;
+      }
+      img {
+        width: 100px;
+      }
+    }
+    .section-footer {
+      .rating-company {
+        margin-top: -10px;
+        font-size: 16pt;
+        font-style: italic;
+      }
+    }
+  }
+  .img-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50vw;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#our-experts-section {
+  flex-direction: column;
+  gap: 3rem;
+
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .experts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    .expert-card {    
+      .card-img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+#contact-details-section {
+  background-color: var(--clr-gray-secondary);
+  .container {
+    display: flex;
+
+    .img-container {
+      position: relative;
+      width: 50%;
+
+      .img-vector {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .img-person {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+    .section-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 11rem 0;
+      padding-left: 3rem;
+
+      .element-group {
+        display: flex;
+        gap: 1rem;
+
+        img {
+          max-height: 25px;
+        }
+        .text-group {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          strong {
+            display: block;
+          }
+          p {
+
+          }
+        }
+      }
+    }
+  }
+}
+</style>

@@ -1,0 +1,423 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+}
+
+<main>
+    <section class="atf">
+      <img src="./images/earth-down.png" class="earth-down"></img>
+      <img src="./images/earth-up.png" class="earth-up"></img>
+  
+      <div class="atf-content">
+        <h1>@Model.Value("pageTitle")</h1>
+        <nav class="breadcrumb-nav">
+          <a href="home.html">Home</a>
+          <img src="./images/Arrow-Vector-Black.svg"></img>
+          <a href="#">Contact us</a>
+        </nav>
+      </div>
+    </section>      
+
+    <section id="contact-details-section">
+      <div class="container">
+        <div class="img-container">
+          <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
+          <img class="img-person" src="./images/contact-details-section-person.png"></img>
+        </div>
+        <div class="section-body">
+          <h2>Let us know about <br>your next project</h2>
+          <div class="element-group">
+            <img src="./images/Icon address.png"></img>
+            <div class="text-group">
+              <strong>Office location</strong>
+              <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon phone.png"></img>
+            <div class="text-group">
+              <strong>Phone number</strong>
+              <p>+46 8 123 456 75</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon email.png"></img>
+            <div class="text-group">
+              <strong>E-mail address</strong>
+              <p>sales@onatrix.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+    <section id="map-section">
+      <img class="map-img" src="./images/map-1.png"></img>
+      <div class="container">
+        <div class="section-heading">
+          <h3>REQUEST A CALL BACK</h3>
+          <h2>Let us know about your <br>next project</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+        </div>
+        <form>
+          <div class="input-group">
+            <input type="text" placeholder="Name"></input>
+            <input type="text" placeholder="Phone"></input>
+            <input type="email" placeholder="E-mail address"></input>
+            <div class="select-wrapper">
+              <div class="select">
+                <div class="select__trigger"><span>Financial consulting</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <span class="option selected" data-value="Financial consulting">Financial consulting</span>
+                    <span class="option" data-value="Business marketing">Business marketing</span>
+                    <span class="option" data-value="Acquisition">Acquisition</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn-green">Submit</button>
+        </form>
+      </div>
+    </section>
+    <section id="brands-section">
+      <div class="container">
+        <img src="./images/brand1.png"></img>
+        <img src="./images/brand2.png"></img>
+        <img src="./images/brand3.png"></img>
+        <img src="./images/brand4.png"></img>
+        <img src="./images/brand5.png"></img>
+        <img src="./images/brand6.png"></img>
+      </div>
+    </section>
+  </main>
+
+	<script>
+    document.querySelector('.select-wrapper').addEventListener('click', function() {
+        this.querySelector('.select').classList.toggle('open')
+    })
+
+    for (const option of document.querySelectorAll(".option")) {
+        option.addEventListener('click', function() {
+            if (!this.classList.contains('selected')) {
+                this.parentNode.querySelector('.option.selected').classList.remove('selected')
+                this.classList.add('selected')
+                this.closest('.select').querySelector('.select__trigger span').textContent = this.textContent
+            }
+        })
+    }
+
+    window.addEventListener('click', function(e) {
+        const select = document.querySelector('.select')
+        if (!select.contains(e.target)) {
+            select.classList.remove('open')
+        }
+    })
+
+    // Add animation delay to options
+    const options = document.querySelectorAll('.option');
+    options.forEach((option, index) => {
+        option.style.transitionDelay = `${index * 80}ms`;
+    })
+
+</script>
+
+<style>
+	main {
+  .atf {
+    position: relative;
+    padding: 6rem 0;
+    background-color: var(--clr-gray-secondary);
+
+    .earth-down {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .earth-up {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .atf-content {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        a {
+          color: var(--clr-text-primary);
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        img {
+          height: 10px;
+        }
+
+        > :nth-child(3) {
+          color: var(--clr-beige-primary);
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  #contact-details-section {
+    .container {
+      display: flex;
+
+      .img-container {
+        position: relative;
+        width: 50%;
+
+        .img-vector {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .img-person {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+      .section-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 11rem 0;
+        padding-left: 3rem;
+
+        .element-group {
+          display: flex;
+          gap: 1rem;
+
+          img {
+            max-height: 25px;
+          }
+          .text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            strong {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #map-section {
+    position: relative;
+    height: 800px;
+
+    .map-img {
+      height: 100%;  
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    .container {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+
+      gap: 2rem;
+      padding: 4rem;
+
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -150px; 
+      
+      background-color: white;
+      text-align: center;
+      box-shadow: 0 0 10px 10px rgba(123, 123, 123, 0.198);
+      z-index: 1;
+
+      .section-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      p {
+        max-width: 800px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .input-group {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+
+          .select-wrapper {
+            position: relative;
+            user-select: none;
+            width: 100%;
+
+            .select {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              border: 1.5px solid;
+              border-color: var(--clr-input-border);
+              border-radius: 4px;
+              padding: .3rem 0;
+
+              &:focus {
+                border-color: var(--clr-input-border-focus);
+              }
+              &:hover {
+                border-color: var(--clr-input-border-hover);
+              }
+
+              .select__trigger {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 22px;
+                font-size: var(--fs-small);
+                font-weight: 300;
+                color: #3b3b3b;
+                height: 40px;
+                line-height: 40px;
+                cursor: pointer;
+
+                span {
+                  font-weight: 400;
+                  font-size: var(--fs-small);
+                }
+
+                .arrow {
+                  position: relative;
+                  height: 15px;
+                  width: 15px;
+                  transform: rotate(180deg);
+
+                  &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 3px;
+                    width: 0.12rem;
+                    height: 9px;
+                    transition: all 0.2s;
+                  }
+                  &::before {
+                    left: 5px;
+                    transform: rotate(45deg);
+                    background-color: var(--clr-green);
+                  }
+                  &::after {
+                    right: 2px;
+                    transform: rotate(-45deg);
+                    background-color: var(--clr-green);
+                  }
+                }
+              }
+
+              .options {
+                position: absolute;
+                display: block;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border: 1.5px solid;
+                border-color: var(--clr-input-border);
+                border-top: 0;
+                background: #fff;
+                transition: all 0.3s;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                z-index: 2;
+
+                .option {
+                  position: relative;
+                  display: block;
+                  padding: 0 22px 0 22px;
+                  font-size: var(--fs-small);
+                  font-weight: 300;
+                  color: #3b3b3b;
+                  line-height: 40px;
+                  cursor: pointer;
+                  transition: all 0.2s;
+                  opacity: 0;
+                  transform: translateY(-10px);
+                  text-align: start;
+
+                  &:hover {
+                    cursor: pointer;
+                    background-color: #b2b2b2;
+                  }
+                }
+
+                .option.selected {
+                  color: #ffffff;
+                  background-color: var(--clr-green);
+                }
+              }
+            }
+
+            .select.open .options {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: all;
+            }
+
+            .select.open .option {
+              opacity: 1;
+              transform: translateY(0);
+            }
+
+            .select.open .arrow::before {
+              transform: rotate(-45deg);
+            }
+            .select.open .arrow::after {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #brands-section {
+    padding: 4rem 0;
+    padding-top: 14rem;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem; 
+    } 
+  }
+}
+</style>

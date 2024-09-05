@@ -1,0 +1,436 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+}
+
+<main>
+    <section class="atf">
+      <img src="./images/earth-down.png" class="earth-down"></img>
+      <img src="./images/earth-up.png" class="earth-up"></img>
+  
+      <div class="atf-content">
+        <h1>@Model.Value("pageTitle")</h1>
+        <nav class="breadcrumb-nav">
+          <a href="home.html">Home</a>
+          <img src="./images/Arrow-Vector-Black.svg"></img>
+          <a href="#">Our projects</a>
+        </nav>
+      </div>
+    </section>
+    
+    <section id="main-content-section" class="page-section container">
+      <div class="side-content">
+        <div class="project">
+          <div class="project-img">
+            <img src="./images/pj1.png"></img>
+          </div>
+          <div class="project-text">
+            <div class="project-header">
+              <h4>Annual Report for Juva Inc.</h4>
+              <div class="date-group">
+                <img src="./images/Icon-calendar.png"></img>
+                <span>June 15, 2024</span>
+              </div>
+            </div>
+            
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+            <a href="#">
+              <span>Read more</span>
+              <img src="./images/Arrow-beige.png"></img>
+            </a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-img">
+            <img src="./images/pj2.png"></img>
+          </div>
+          <div class="project-text">
+            <div class="project-header">
+              <h4>Business Insights for SP Group and Friends</h4>
+              <div class="date-group">
+                <img src="./images/Icon-calendar.png"></img>
+                <span>June 15, 2024</span>
+              </div>
+            </div>
+            
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+            <a href="#">
+              <span>Read more</span>
+              <img src="./images/Arrow-beige.png"></img>
+            </a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-img">
+            <img src="./images/pj3.png"></img>
+          </div>
+          <div class="project-text">
+            <div class="project-header">
+              <h4>Financial Advisors for Irra Industrial Group</h4>
+              <div class="date-group">
+                <img src="./images/Icon-calendar.png"></img>
+                <span>June 15, 2024</span>
+              </div>
+            </div>
+            
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+            <a href="#">
+              <span>Read more</span>
+              <img src="./images/Arrow-beige.png"></img>
+            </a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-img">
+            <img src="./images/pj4.png"></img>
+          </div>
+          <div class="project-text">
+            <div class="project-header">
+              <h4>Budget Planning for Buccura Industrial</h4>
+              <div class="date-group">
+                <img src="./images/Icon-calendar.png"></img>
+                <span>June 15, 2024</span>
+              </div>
+            </div>
+            
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+            <a href="#">
+              <span>Read more</span>
+              <img src="./images/Arrow-beige.png"></img>
+            </a>
+          </div>
+        </div>
+      </div>
+        
+      <div class="side-bar">
+        <h4>Tags</h4>
+        <div class="tags">
+          <div class="tag"><span>Report</span></div>
+          <div class="tag"><span>Finance</span></div>
+          <div class="tag"><span>Project</span></div>
+          <div class="tag"><span>Pricing</span></div>
+          <div class="tag"><span>App</span></div>
+          <div class="tag"><span>Business</span></div>
+          <div class="tag"><span>Insights</span></div>
+          <div class="tag"><span>Business plans</span></div>
+        </div>
+
+        <form class="contact-box">
+          <h4>How can we help you?</h4>
+          <p>Online support 24/7, we are here to help you</p>
+          <div class="input-container">
+            <input type="email" placeholder="E-mail address"></input>
+            <img src="./images/Icon-mail.png"></img>
+          </div>
+      
+        </form>
+      </div>
+
+    </section>
+
+    <section id="contact-details-section">
+      <div class="container">
+        <div class="img-container">
+          <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
+          <img class="img-person" src="./images/contact-details-section-person.png"></img>
+        </div>
+        <div class="section-body">
+          <h2>Let us know about <br>your next project</h2>
+          <div class="element-group">
+            <img src="./images/Icon address.png"></img>
+            <div class="text-group">
+              <strong>Office location</strong>
+              <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon phone.png"></img>
+            <div class="text-group">
+              <strong>Phone number</strong>
+              <p>+46 8 123 456 75</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon email.png"></img>
+            <div class="text-group">
+              <strong>E-mail address</strong>
+              <p>sales@onatrix.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+  </main>
+
+	<style>
+		main {
+  
+  .atf {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--clr-gray-secondary);
+
+  .earth-down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .earth-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .atf-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      > :nth-child(1) {
+        color: var(--clr-text-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      img {
+        height: 10px;
+      }
+
+      > :nth-child(3) {
+        color: var(--clr-beige-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  }
+  #main-content-section {
+    display: flex;
+    gap: 3rem;
+
+    .side-content {
+      display: flex;
+      flex-direction: column;
+      padding-right: 3rem;
+      border-right: 1px solid var(--clr-gray-secondary);
+      gap: 2rem;
+      max-width: 70%;
+
+      .project {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--clr-gray-secondary);
+
+        .project-img {
+          overflow: hidden;
+          max-height: 250px;
+          width: 700px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        
+
+        .project-text {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .project-header {
+            display: flex;
+            flex-direction: column;
+
+            h4 {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .date-group {
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 15px;
+              }
+              span {
+                color: var(--clr-text-secondary);
+              }
+            }
+          }
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--clr-text-heading);
+            text-decoration: none;
+            width: 100px;
+
+            &:hover {
+              text-decoration: underline;
+            }
+            
+            span {
+              padding: 0;
+            }
+  
+            img {
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .side-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      height: fit-content;
+
+      h4 {
+        font-size: 18pt;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .tag {
+          padding: .7rem 1rem;
+          border-radius: 20px;
+          border: 1px solid var(--clr-gray-secondary);
+          transition: all 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--clr-green);
+
+            span {
+              color: var(--clr-text-white);
+            }            
+          }
+          
+          span {
+            display: block;
+            text-align: center;
+            padding: 0;
+          }
+        }
+      }
+      
+
+      .contact-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background-color: var(--clr-green);
+        
+        h4 {
+          color: var(--clr-beige-primary);
+        }
+
+        p {
+          color: var(--clr-gray-secondary);
+        }
+
+        .input-container {
+          position: relative;
+
+          input {
+          display: flex;
+          background-color: var(--clr-bg-white);
+
+          &:hover {
+            border-color: black;
+            }
+          }  
+          img {
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              width: 30px;
+              height: 30px;
+              z-index: 2;
+          }
+        }
+      }
+    }
+    
+  }
+
+  #contact-details-section {
+  background-color: var(--clr-gray-secondary);
+
+    .container {
+      display: flex;
+
+      .img-container {
+        position: relative;
+        width: 50%;
+
+        .img-vector {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .img-person {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+      .section-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 11rem 0;
+        padding-left: 3rem;
+
+        .element-group {
+          display: flex;
+          gap: 1rem;
+
+          img {
+            max-height: 25px;
+          }
+          .text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            strong {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+	</style>

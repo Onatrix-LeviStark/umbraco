@@ -1,0 +1,330 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle");
+}
+
+  <main>
+    <section class="atf">
+      <img src="./images/earth-down.png" class="earth-down"></img>
+      <img src="./images/earth-up.png" class="earth-up"></img>
+  
+      <div class="atf-content">
+        <h1>@Model.Value("pageTitle")</h1>
+        <nav class="breadcrumb-nav">
+          <a href="home.html">Home</a>
+          <img src="./images/Arrow-Vector-Black.svg"></img>
+          <a href="#">Risk management</a>
+        </nav>
+      </div>
+    </section>
+    
+    <section id="main-content-section" class="page-section container">
+      <div class="side-bar">
+        <h4>About Us</h4>
+        <img class="side-bar-img" src="./images/side-bar-image.png"></img>
+        <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        <form class="contact-box">
+          <h4>How can we help you?</h4>
+          <p>Online support 24/7, we are here to help you</p>
+          <div class="input-container">
+            <input type="email" placeholder="E-mail address"></input>
+            <img src="./images/Icon-mail.png"></img>
+          </div>
+      
+        </form>
+      </div>
+      <div class="side-content">
+        <img src="./images/side-content-image-1.png"></img>
+        <div class="text-group">
+          <h4>key point</h4>
+          <ul>
+            <li>Financial planning is the process of helping clients meet their financial needs today and reach their dreams and goals tomorrow.</li>
+            <li>Pellentesque fringilla augue quis dolor dapibus semper eget non nibh. Ut lobortis, nulla sed euismod posuere, quam magna scelerisque lectus, auctor iaculis quam ligula nec augue</li>
+            <li>In hac habitasse platea dictumst. Aliquam felis ante, tincidunt sed magna auctor, aliquet dapibus turpis.</li>
+          </ul>
+        </div>
+        <div class="text-group">
+          <h4>A financial plan is based on a personal relationship</h4>
+          <p>No matter where you find yourself today or see yourself in the future, a financial planning relationship with an Ameriprise financial advisor can help you find your financial balance and bring your dreams and goals more within reach.</p>
+          <p>Our Confident Retirement approach to financial planning begins with a one-on-one conversation. At its core is a personal relationship with an advisor dedicated to helping you reach the future you imagine, on your own terms, in a way that is convenient for you.</p>
+          <p>The financial planning process all starts with learning about you. Your advisor will take the time to:</p>
+
+          <ul>
+            <li>Listen closely to you and learn what you value</li>
+            <li>Analyze your current financial situation</li>      
+            <li>Understand your feelings about managing money and investments</li>
+          </ul>
+
+          <p>Then your advisor will offer personalized advice and guidance to help you reach your financial goals. Ameriprise advisors have access to a broad array of solutions to help you plan for your confident future.</p>
+          <p>And once you have a plan in place, you may feel more confident knowing that your advisor will stay with you over time, helping you track your progress toward your goals and making adjustments along the way when your life or dreams change.</p>
+        </div>
+
+        <img src="./images/side-content-image-2.png"></img>
+        <div class="text-group">
+          <h4>We’ll help you achieve financial confidence</h4>
+          <p>Working with a financial advisor may help you come away feeling more confident knowing that you have the support you need to help:</p>
+          <ul>
+            <li>Cover your essentials. Essentials are the monthly expenses that keep your life running.</li>
+            <li>Ensure your lifestyle. Lifestyle is about the things that you want to do, and how you want to live, today and in the future.</li>
+            <li>Prepare for the unexpected. The unexpected are events that could derail your financial plans.</li>
+            <li>Leave a legacy. Legacy is about the impact you’ll make on the people, charities and causes that are important to you.</li>
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="contact-form-section" class="container page-section">
+      <h4>Have a question?</h4>
+      <form>
+        <div class="input-group">
+          <input type="text" placeholder="Name"></input>
+          <input type="email" placeholder="Email"></input>
+        </div>
+        <textarea placeholder="Question"></textarea>
+        <button class="btn-green" type="submit">Submit</button>
+      </form>
+    </section>
+    <section id="contact-details-section">
+      <div class="container">
+        <div class="img-container">
+          <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
+          <img class="img-person" src="./images/contact-details-section-person.png"></img>
+        </div>
+        <div class="section-body">
+          <h2>Let us know about <br>your next project</h2>
+          <div class="element-group">
+            <img src="./images/Icon address.png"></img>
+            <div class="text-group">
+              <strong>Office location</strong>
+              <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon phone.png"></img>
+            <div class="text-group">
+              <strong>Phone number</strong>
+              <p>+46 8 123 456 75</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon email.png"></img>
+            <div class="text-group">
+              <strong>E-mail address</strong>
+              <p>sales@onatrix.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+  </main>
+
+	<style>
+		main {
+  
+  .atf {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--clr-gray-secondary);
+
+  .earth-down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .earth-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .atf-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      > :nth-child(1) {
+        color: var(--clr-text-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      img {
+        height: 10px;
+      }
+
+      > :nth-child(3) {
+        color: var(--clr-beige-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  }
+  #main-content-section {
+    display: flex;
+    gap: 3rem;
+
+    .side-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      height: fit-content;
+
+      h4 {
+        font-size: 18pt;
+      }
+
+      .side-bar-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .contact-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background-color: var(--clr-green);
+        
+        h4 {
+          color: var(--clr-beige-primary);
+        }
+
+        p {
+          color: var(--clr-gray-secondary);
+        }
+
+        .input-container {
+          position: relative;
+
+          input {
+          display: flex;
+          background-color: var(--clr-bg-white);
+
+          &:hover {
+            border-color: black;
+            }
+          }  
+          img {
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              width: 30px;
+              height: 30px;
+              z-index: 2;
+          }
+        }
+      }
+    }
+
+    .side-content {
+      display: flex;
+      flex-direction: column;
+      padding-left: 3rem;
+      border-left: 1px solid var(--clr-gray-secondary);
+
+      gap: 2rem;
+
+      .text-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h4 {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  #contact-form-section {
+    flex-direction: column;
+    gap: 2rem;
+
+    h4 {
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .input-group {
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+  }
+  #contact-details-section {
+  background-color: var(--clr-gray-secondary);
+  .container {
+    display: flex;
+
+    .img-container {
+      position: relative;
+      width: 50%;
+
+      .img-vector {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .img-person {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+    .section-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 11rem 0;
+      padding-left: 3rem;
+
+      .element-group {
+        display: flex;
+        gap: 1rem;
+
+        img {
+          max-height: 25px;
+        }
+        .text-group {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          strong {
+            display: block;
+          }
+          p {
+
+          }
+        }
+      }
+    }
+  }
+  }
+}
+	</style>
