@@ -24,4 +24,7 @@ app.UseUmbraco()
         u.UseWebsiteEndpoints();
     });
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}");
+
 await app.RunAsync();
