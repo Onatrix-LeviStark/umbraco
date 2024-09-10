@@ -13,7 +13,6 @@ WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();
 
-
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
@@ -26,18 +25,19 @@ app.UseUmbraco()
         u.UseWebsiteEndpoints();
     });
 
-// Check if we're running in Azure
-if (app.Environment.IsProduction() && IsRunningInAzure())
-{
-    // Use Azure-provided port, with fallbacks
-    var port = Environment.GetEnvironmentVariable("PORT") ?? Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
-    app.Urls.Clear();
-    app.Urls.Add($"http://0.0.0.0:{port}");
-}
+// if (app.Environment.IsProduction() && IsRunningInAzure())
+// {
+//     var path = Path.Combine(app.Environment.ContentRootPath, "App_Data");
+//     Directory.CreateDirectory(path);
+    
+//     var port = Environment.GetEnvironmentVariable("PORT") ?? Environment.GetEnvironmentVariable("WEBSITES_PORT") ?? "8080";
+//     app.Urls.Clear();
+//     app.Urls.Add($"http://0.0.0.0:{port}");
+// }
 
 await app.RunAsync();
 
-bool IsRunningInAzure()
-{
-    return !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME"));
-}
+// bool IsRunningInAzure()
+// {
+//     return !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME"));
+// }
