@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="App_Data\UmbracoDB.sqlite.db">
+    <None Update="umbraco\Data\Umbraco.sqlite.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,4 +1,5 @@
 {
   "appService.preDeployTask": "publish-release",
+  "appService.defaultWebAppToDeploy": "/d93c4993-112d-48c8-9ef7-2ea6c4bbea4f/resourceGroups/umbraco/providers/Microsoft.Web/sites/umbraco-webapp",
   "appService.deploySubpath": "UmbracoCMS/bin/Release/net8.0/publish"
 }
