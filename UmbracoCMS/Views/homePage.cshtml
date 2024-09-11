@@ -3,17 +3,17 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+  var backgroundImage = Model.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
 }
 
 <section id="hero-section">
-    <img src="./images/sl-home2.png" alt="Tina Fox, CEO & Founder"></img>
+    <img src="@backgroundImage" alt="Tina Fox, CEO & Founder"></img>
     <div class="container page-section">
       <div class="container-content">
-        <h1>@Model.Value("pageTitle")</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur. adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-        <a class="btn hero-button">Contact us</a>
+        <h1>@Model.Value("heroHeading")</h1>
+        <p>@Model.Value("heroText")</p>
+        <a class="btn hero-button" href="@Model.Value("heroImageUrl")">Contact us</a>
       </div>
-
     </div>
   </section>
   <section id="about-us-section" class="container page-section">
