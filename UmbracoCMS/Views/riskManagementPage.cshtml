@@ -3,28 +3,36 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+
+  var sidebarImage = Model.Value<IPublishedContent>("sidebarImage")?.Url() ?? "";
+  var image1 = Model.Value<IPublishedContent>("image1")?.Url() ?? "";
+  var image2 = Model.Value<IPublishedContent>("image2")?.Url() ?? "";
+
+  var contactInfoImage = Model.Value<IPublishedContent>("contactInfoImage")?.Url() ?? "";
+  var contactInfoBackground = Model.Value<IPublishedContent>("contactInfoBackground")?.Url() ?? "";
 }
 
   <main>
     <section class="atf">
-      <img src="./images/earth-down.png" class="earth-down"></img>
-      <img src="./images/earth-up.png" class="earth-up"></img>
-  
-      <div class="atf-content">
-        <h1>@Model.Value("pageTitle")</h1>
-        <nav class="breadcrumb-nav">
-          <a href="home.html">Home</a>
-          <img src="./images/Arrow-Vector-Black.svg"></img>
-          <a href="#">Risk management</a>
-        </nav>
-      </div>
-    </section>
+    <img src="./images/earth-down.png" class="earth-down"></img>
+    <img src="./images/earth-up.png" class="earth-up"></img>
+
+    <div class="atf-content">
+      <h1>@Model.Value("atfHeading")</h1>
+      <nav class="breadcrumb-nav">
+        <a href="@Model.Value("breadcrumbLink1Url")">@Model.Value("breadcrumbLink1Text")</a>
+        <img src="./images/Arrow-Vector-Black.svg"></img>
+        <a href="@Model.Value("breadcrumbLink2Url")">@Model.Value("breadcrumbLink2Text")</a>
+      </nav>
+    </div>
+    
+  </section>  
     
     <section id="main-content-section" class="page-section container">
       <div class="side-bar">
-        <h4>About Us</h4>
-        <img class="side-bar-img" src="./images/side-bar-image.png"></img>
-        <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+        <h4>@Model.Value("sidebarHeading")</h4>
+        <img class="side-bar-img" src="@sidebarImage"></img>
+        <p>@Model.Value("sidebarParagraph")</p>
         <form class="contact-box">
           <h4>How can we help you?</h4>
           <p>Online support 24/7, we are here to help you</p>
@@ -36,40 +44,40 @@
         </form>
       </div>
       <div class="side-content">
-        <img src="./images/side-content-image-1.png"></img>
+        <img src="@image1"></img>
         <div class="text-group">
-          <h4>key point</h4>
+          <h4>@Model.Value("heading1")</h4>
           <ul>
-            <li>Financial planning is the process of helping clients meet their financial needs today and reach their dreams and goals tomorrow.</li>
-            <li>Pellentesque fringilla augue quis dolor dapibus semper eget non nibh. Ut lobortis, nulla sed euismod posuere, quam magna scelerisque lectus, auctor iaculis quam ligula nec augue</li>
-            <li>In hac habitasse platea dictumst. Aliquam felis ante, tincidunt sed magna auctor, aliquet dapibus turpis.</li>
+            <li>@Model.Value("keypoint1")</li>
+            <li>@Model.Value("keypoint2")</li>
+            <li>@Model.Value("keypoint3")</li>
           </ul>
         </div>
         <div class="text-group">
-          <h4>A financial plan is based on a personal relationship</h4>
-          <p>No matter where you find yourself today or see yourself in the future, a financial planning relationship with an Ameriprise financial advisor can help you find your financial balance and bring your dreams and goals more within reach.</p>
-          <p>Our Confident Retirement approach to financial planning begins with a one-on-one conversation. At its core is a personal relationship with an advisor dedicated to helping you reach the future you imagine, on your own terms, in a way that is convenient for you.</p>
-          <p>The financial planning process all starts with learning about you. Your advisor will take the time to:</p>
+          <h4>@Model.Value("heading2")</h4>
+          <p>@Model.Value("paragraph1")</p>
+          <p>@Model.Value("paragraph2")</p>
+          <p>@Model.Value("paragraph3")</p>
 
           <ul>
-            <li>Listen closely to you and learn what you value</li>
-            <li>Analyze your current financial situation</li>      
-            <li>Understand your feelings about managing money and investments</li>
+            <li>@Model.Value("keypoint4")</li>
+            <li>@Model.Value("keypoint5")</li>      
+            <li>@Model.Value("keypoint6")</li>
           </ul>
 
-          <p>Then your advisor will offer personalized advice and guidance to help you reach your financial goals. Ameriprise advisors have access to a broad array of solutions to help you plan for your confident future.</p>
-          <p>And once you have a plan in place, you may feel more confident knowing that your advisor will stay with you over time, helping you track your progress toward your goals and making adjustments along the way when your life or dreams change.</p>
+          <p>@Model.Value("paragraph4")</p>
+          <p>@Model.Value("paragraph5")</p>
         </div>
 
         <img src="./images/side-content-image-2.png"></img>
         <div class="text-group">
-          <h4>We’ll help you achieve financial confidence</h4>
-          <p>Working with a financial advisor may help you come away feeling more confident knowing that you have the support you need to help:</p>
+          <h4>@Model.Value("heading3")</h4>
+          <p>@Model.Value("paragraph7")</p>
           <ul>
-            <li>Cover your essentials. Essentials are the monthly expenses that keep your life running.</li>
-            <li>Ensure your lifestyle. Lifestyle is about the things that you want to do, and how you want to live, today and in the future.</li>
-            <li>Prepare for the unexpected. The unexpected are events that could derail your financial plans.</li>
-            <li>Leave a legacy. Legacy is about the impact you’ll make on the people, charities and causes that are important to you.</li>
+            <li>@Model.Value("keypoint7")</li>
+            <li>@Model.Value("keypoint8")</li>
+            <li>@Model.Value("keypoint9")</li>
+            <li>@Model.Value("keypoint10")</li>
           </ul>
         </div>
         
@@ -90,35 +98,35 @@
     <section id="contact-details-section">
       <div class="container">
         <div class="img-container">
-          <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
-          <img class="img-person" src="./images/contact-details-section-person.png"></img>
+          <img class="img-vector" src="@contactInfoBackground"></img>
+          <img class="img-person" src="@contactInfoImage"></img>
         </div>
         <div class="section-body">
-          <h2>Let us know about <br>your next project</h2>
+          <h2>@Model.Value("contactInfoHeading")</h2>
           <div class="element-group">
             <img src="./images/Icon address.png"></img>
             <div class="text-group">
-              <strong>Office location</strong>
-              <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+              <strong>@Model.Value("contactInfoAddressHeading")</strong>
+              <p>@Model.Value("contactInfoAddress")</p>
             </div>
           </div>
           <div class="element-group">
             <img src="./images/Icon phone.png"></img>
             <div class="text-group">
-              <strong>Phone number</strong>
-              <p>+46 8 123 456 75</p>
+              <strong>@Model.Value("contactInfoPhoneHeading")</strong>
+              <p>@Model.Value("contactInfoPhone")</p>
             </div>
           </div>
           <div class="element-group">
             <img src="./images/Icon email.png"></img>
             <div class="text-group">
-              <strong>E-mail address</strong>
-              <p>sales@onatrix.com</p>
+              <strong>@Model.Value("contactInfoEmailHeading")</strong>
+              <p>@Model.Value("contactInfoEmail")</p>
             </div>
           </div>
         </div>
       </div>
-    </section>  
+    </section>
 
   </main>
 

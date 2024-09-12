@@ -3,6 +3,21 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+
+  var mainSideImage = Model.Value<IPublishedContent>("mainSideImage")?.Url() ?? "";
+  var reviewSideImage = Model.Value<IPublishedContent>("reviewSideImage")?.Url() ?? "";
+
+  var expertImage1 = Model.Value<IPublishedContent>("expertImage1")?.Url() ?? "";
+  var expertImage2 = Model.Value<IPublishedContent>("expertImage2")?.Url() ?? "";
+  var expertImage3 = Model.Value<IPublishedContent>("expertImage3")?.Url() ?? "";
+  var expertImage4 = Model.Value<IPublishedContent>("expertImage4")?.Url() ?? "";
+  var expertImage5 = Model.Value<IPublishedContent>("expertImage5")?.Url() ?? "";
+  var expertImage6 = Model.Value<IPublishedContent>("expertImage6")?.Url() ?? "";
+  var expertImage7 = Model.Value<IPublishedContent>("expertImage7")?.Url() ?? "";
+  
+  var contactInfoImage = Model.Value<IPublishedContent>("contactInfoImage")?.Url() ?? "";
+  var contactInfoBackground = Model.Value<IPublishedContent>("contactInfoBackground")?.Url() ?? "";
+  
 }
 
 <section class="atf">
@@ -10,11 +25,11 @@
     <img src="./images/earth-up.png" class="earth-up"></img>
 
     <div class="atf-content">
-      <h1>@Model.Value("pageTitle")</h1>
+      <h1>@Model.Value("atfHeading")</h1>
       <nav class="breadcrumb-nav">
-        <a href="home.html">Home</a>
+        <a href="@Model.Value("breadcrumbLink1Url")">@Model.Value("breadcrumbLink1Text")</a>
         <img src="./images/Arrow-Vector-Black.svg"></img>
-        <a href="#">About</a>
+        <a href="@Model.Value("breadcrumbLink2Url")">@Model.Value("breadcrumbLink2Text")</a>
       </nav>
     </div>
     
@@ -23,18 +38,18 @@
   <section id="about-us-section" class="page-section">
     <div class="container">
       <div class="img-container">
-        <img src="./images/tina-fox1.png"></img>
-        <p>Tina Fox - CEO & Founder at Onatrix</p>
+        <img src="@mainSideImage"></img>
+        <p>@Model.Value("mainSideImageText")</p>
       </div>
       <div class="text-container">
-        <blockquote>“We have over 25 years of experience providing expert financial advice to both businesses and individuals.”</blockquote>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus a massa lobortis sollicitudin. Cras ut nulla quam. Maecenas tempus felis quis lorem malesuada vehicular.</p>
-        <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum.</p>
-        <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
-        <p>Phasellus laoreet, sapien id euismod hendrerit, nibh ligula hendrerit libero, sit amet hendrerit elit turpis nec velit. Praesent tincidunt nisi at vulputate ornare. Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum elit at urna dapibus viverra. Etiam lectus libero, condimentum eget justo ac, accumsan suscipit libero.</p>
-        <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum  i commodo, eros quis consequat consequat.</p>
-        <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
-        <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+        <blockquote>@Model.Value("mainQuote")</blockquote>
+        <p>@Model.Value("mainParagraph1")</p>
+        <p>@Model.Value("mainParagraph2")</p>
+        <p>@Model.Value("mainParagraph3")</p>
+        <p>@Model.Value("mainParagraph4")</p>
+        <p>@Model.Value("mainParagraph5")</p>
+        <p>@Model.Value("mainParagraph6")</p>
+        <p>@Model.Value("mainParagraph7")</p>
       </div>
     </div>
   </section>
@@ -42,76 +57,76 @@
   <section id="review-section" class="page-section">
     <div class="container">
       <div class="section-heading">
-        <h3>GREAT REVIEWS FOR OUR SERVICES</h3>
-        <h2>Trusted by some <br>Biggest names</h2>
+        <h3>@Model.Value("reviewHeading")</h3>
+        <h2>@Model.Value("reviewSubheading")</h2>
       </div>
       <div class="section-body">
-        <p>Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals.</p>
+        <p>@Model.Value("reviewQuote")</p>
         <img src="./images/Rating.png" class="rating-img"></img>
       </div>
       <div class="section-footer">
-        <p>Kevin Gardner</p>
-        <p class="rating-company">Swedbank</p>
+        <p>@Model.Value("reviewName")</p>
+        <p class="rating-company">@Model.Value("reviewCompany")</p>
       </div>
     </div>
     <div class="img-container">
-      <img src="./images/kevin-gardner.png"></img>
+      <img src="@reviewSideImage"></img>
     </div>
   </section>
 
   <section id="our-experts-section" class="page-section container">
     <div class="section-heading">
-      <h3>OUR EXPERTS</h3>
-      <h2>A team of professionals <br>with years of experience</h2>
+      <h3>@Model.Value("expertsHeading")</h3>
+      <h2>@Model.Value("expertsSubheading")</h2>
     </div>
     <div class="experts-grid">
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-1.png"></img>
+        <img class="card-img" src="@expertImage1"></img>
         <div class="card-body">
-          <h4>Brandon Newton</h4>
-          <p>Financial Advisor at Onatrix</p>
+          <h4>@Model.Value("expertName1")</h4>
+          <p>@Model.Value("expertRole1")</p>
         </div>
       </div>
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-2.png"></img>
+        <img class="card-img" src="@expertImage2"></img>
         <div class="card-body">
-          <h4>AJ Carter</h4>
-          <p>Financial Advisor at Onatrix</p>
+          <h4>@Model.Value("expertName2")</h4>
+          <p>@Model.Value("expertRole2")</p>
         </div>
       </div>
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-3.png"></img>
+        <img class="card-img" src="@expertImage3"></img>
         <div class="card-body">
-          <h4>Aaron Lambert</h4>
-          <p>Financial Advisor at Onatrix</p>
+          <h4>@Model.Value("expertName3")</h4>
+          <p>@Model.Value("expertRole3")</p>
         </div>
       </div>
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-4.png"></img>
+        <img class="card-img" src="@expertImage4"></img>
         <div class="card-body">
-          <h4>Tina Fox</h4>
-          <p>CEO & Founder at Onatrix</p>
+          <h4>@Model.Value("expertName4")</h4>
+          <p>@Model.Value("expertRole4")</p>
         </div>
       </div>
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-5.png"></img>
-        <div class="card-body">
-          <h4>Brandon Kerr</h4>
-          <p> CFO & Co-Founderat Onatrix</p>
+        <img class="card-img" src="@expertImage5"></img>
+        <div class="card-body"
+          <h4>@Model.Value("expertName5")</h4>
+          <p> @Model.Value("expertRole5")</p>
         </div>
       </div>
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-6.png"></img>
+        <img class="card-img" src="@expertImage6"></img>
         <div class="card-body">
-          <h4>Miranda Dayton</h4>
-          <p>Head of HR at Onatrix</p>
+          <h4>@Model.Value("expertName6")</h4>
+          <p>@Model.Value("expertRole6")</p>
         </div>
       </div>
       <div class="expert-card">
-        <img class="card-img" src="./images/experts/expert-7.png"></img>
+        <img class="card-img" src="@expertImage7"></img>
         <div class="card-body">
-          <h4>Kevin Gardner</h4>
-          <p>Banking Advisor at Swedbank</p>
+          <h4>@Model.Value("expertName7")</h4>
+          <p>@Model.Value("expertRole7")</p>
         </div>
       </div>
     </div>
@@ -120,30 +135,30 @@
   <section id="contact-details-section">
     <div class="container">
       <div class="img-container">
-        <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
-        <img class="img-person" src="./images/contact-details-section-person.png"></img>
+        <img class="img-vector" src="@contactInfoBackground"></img>
+        <img class="img-person" src="@contactInfoImage"></img>
       </div>
       <div class="section-body">
-        <h2>Let us know about <br>your next project</h2>
+        <h2>@Model.Value("contactInfoHeading")</h2>
         <div class="element-group">
           <img src="./images/Icon address.png"></img>
           <div class="text-group">
-            <strong>Office location</strong>
-            <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+            <strong>@Model.Value("contactInfoAddressHeading")</strong>
+            <p>@Model.Value("contactInfoAddress")</p>
           </div>
         </div>
         <div class="element-group">
           <img src="./images/Icon phone.png"></img>
           <div class="text-group">
-            <strong>Phone number</strong>
-            <p>+46 8 123 456 75</p>
+            <strong>@Model.Value("contactInfoPhoneHeading")</strong>
+            <p>@Model.Value("contactInfoPhone")</p>
           </div>
         </div>
         <div class="element-group">
           <img src="./images/Icon email.png"></img>
           <div class="text-group">
-            <strong>E-mail address</strong>
-            <p>sales@onatrix.com</p>
+            <strong>@Model.Value("contactInfoEmailHeading")</strong>
+            <p>@Model.Value("contactInfoEmail")</p>
           </div>
         </div>
       </div>
@@ -242,14 +257,18 @@
       flex-direction: column;
       gap: 1rem;
     }
-
+    .section-heading {
+      max-width: 540px;
+    }
     .section-body {
+      max-width: 540px;
+
       p {
         font-size: 16pt;
         font-style: italic;
         font-weight: 300;
         color: var(--clr-text-secondary);
-        max-width: 550px;
+        
       }
       img {
         width: 100px;

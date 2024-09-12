@@ -3,7 +3,33 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+  
   var backgroundImage = Model.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+  var signatureImage = Model.Value<IPublishedContent>("aboutSectionSignatureImage")?.Url() ?? "";
+  
+  var trustedImageMain = Model.Value<IPublishedContent>("trustedImageMain")?.Url() ?? "";
+  var trustedImageBackground = Model.Value<IPublishedContent>("trustedImageBackground")?.Url() ?? "";
+  
+  var successStoriesImage = Model.Value<IPublishedContent>("successStoriesImage")?.Url() ?? "";
+
+  var ourServicesImage1 = Model.Value<IPublishedContent>("ourServicesImage1")?.Url() ?? "";
+  var ourServicesImage2 = Model.Value<IPublishedContent>("ourServicesImage2")?.Url() ?? "";
+  var ourServicesImage3 = Model.Value<IPublishedContent>("ourServicesImage3")?.Url() ?? "";
+  var ourServicesImage4 = Model.Value<IPublishedContent>("ourServicesImage4")?.Url() ?? "";
+  var ourServicesImage5 = Model.Value<IPublishedContent>("ourServicesImage5")?.Url() ?? "";
+  var ourServicesImage6 = Model.Value<IPublishedContent>("ourServicesImage6")?.Url() ?? "";
+  
+  var ourProjects1Image = Model.Value<IPublishedContent>("ourProjectsProject1Image")?.Url() ?? "";
+  var ourProjects2Image = Model.Value<IPublishedContent>("ourProjectsProject2Image")?.Url() ?? "";
+  var ourProjects3Image = Model.Value<IPublishedContent>("ourProjectsProject3Image")?.Url() ?? "";
+  var ourProjects4Image = Model.Value<IPublishedContent>("ourProjectsProject4Image")?.Url() ?? "";
+
+  var brandsImage1 = Model.Value<IPublishedContent>("brandsImage1")?.Url() ?? "";
+  var brandsImage2 = Model.Value<IPublishedContent>("brandsImage2")?.Url() ?? "";
+  var brandsImage3 = Model.Value<IPublishedContent>("brandsImage3")?.Url() ?? "";
+  var brandsImage4 = Model.Value<IPublishedContent>("brandsImage4")?.Url() ?? "";
+  var brandsImage5 = Model.Value<IPublishedContent>("brandsImage5")?.Url() ?? "";
+  var brandsImage6 = Model.Value<IPublishedContent>("brandsImage6")?.Url() ?? "";
 }
 
 <section id="hero-section">
@@ -12,90 +38,90 @@
       <div class="container-content">
         <h1>@Model.Value("heroHeading")</h1>
         <p>@Model.Value("heroText")</p>
-        <a class="btn hero-button" href="@Model.Value("heroImageUrl")">Contact us</a>
+        <a class="btn hero-button" href="@Model.Value("heroButtonUrl")">@Model.Value("heroButtonText")</a>
       </div>
     </div>
   </section>
   <section id="about-us-section" class="container page-section">
     <div class="container-content">
-      <h3 class="section-title">ABOUT US</h3>
-      <h2>We have 40 years of experience</h2>
-      <blockquote>“We have over 25 years of experience providing expert financial advice to both businesses and individuals.”</blockquote>
-      <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-      <img src="./images/OnlineSignatures.net-302 1.svg" alt="Tina Fox's signature"></img>
-      <p>Tina Fox - CEO & Founder</p>
+      <h3 class="section-title">@Model.Value("aboutSectionHeading")</h3>
+      <h2>@Model.Value("aboutSectionSubHeading")</h2>
+      <blockquote>@Model.Value("aboutSectionQuote")</blockquote>
+      <p>@Model.Value("aboutSectionParagraph")</p>
+      <img src="@signatureImage" alt="@Model.Value("aboutSectionSignatureImageText")"></img>
+      <p>@Model.Value("aboutSectionSignatureImageText")</p>
     </div>
     <div class="floating-box">
       <div class="box-header">
-        <h3>Request a call back</h3>
+        <h3>@Model.Value("aboutFormHeading")</h3>
       </div>
       <form>
-        <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
-        <input type="text" placeholder="Name"></input>
-        <input type="email" placeholder="Email address"></input>
-        <input type="number" placeholder="Phone"></input>
+        <p>@Model.Value("aboutFormParagraph")</p>
+        <input type="text" placeholder="@Model.Value("aboutFormInput1Placeholder")"></input>
+        <input type="email" placeholder="@Model.Value("aboutFormInput2Placeholder")"></input>
+        <input type="number" placeholder="@Model.Value("aboutFormInput3Placeholder")"></input>
         <div class="select-wrapper">
           <div class="select">
-            <div class="select__trigger"><span>Financial consulting</span>
+            <div class="select__trigger"><span>@Model.Value("aboutFormSelectOption1")</span>
                 <div class="arrow"></div>
             </div>
             <div class="options">
-                <span class="option selected" data-value="Financial consulting">Financial consulting</span>
-                <span class="option" data-value="Business marketing">Business marketing</span>
-                <span class="option" data-value="Acquisition">Acquisition</span>
+                <span class="option selected" data-value="@Model.Value("aboutFormSelectOption1")">@Model.Value("aboutFormSelectOption1")</span>
+                <span class="option" data-value="@Model.Value("aboutFormSelectOption2")">@Model.Value("aboutFormSelectOption2")</span>
+                <span class="option" data-value="@Model.Value("aboutFormSelectOption3")">@Model.Value("aboutFormSelectOption3")</span>
             </div>
           </div>
         </div>
-        <button type="submit" class="btn-beige">Submit</button>
+        <button type="submit" class="btn-beige">@Model.Value("aboutFormButtonText")</button>
       </form>
     </div>
   </section>
   <section id="our-services-section">
     <div class="container page-section">
-      <h3>OUR SERVICES</h3>
-      <h2>We Provide The Solutions<br>To Grow Your Business Faster</h2>
+      <h3>@Model.Value("ourServicesSectionHeading")</h3>
+      <h2>@Model.Value("ourServicesSectionSubheading")</h2>
       <div class="grid-container">
         <div class="card">
-          <h4 class="card-heading">Risk Management</h4>
+          <h4 class="card-heading">@Model.Value("ourServicesService1Heading")</h4>
           <div class="card-image">
-            <img src="./images/services-1.png"></img>            
+            <img src="@ourServicesImage1"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("ourServicesService1Paragraph")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Bonds & Commodities</h4>
+          <h4 class="card-heading">@Model.Value("ourServicesService2Heading")</h4>
           <div class="card-image">
-            <img src="./images/services-2.png"></img>            
+            <img src="@ourServicesImage2"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("ourServicesService2Paragraph")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Assurance & Audits</h4>
+          <h4 class="card-heading">@Model.Value("ourServicesService3Heading")</h4>
           <div class="card-image">
-            <img src="./images/services-3.png"></img>            
+            <img src="@ourServicesImage3"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("ourServicesService3Paragraph")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Tax and Trusts</h4>
+          <h4 class="card-heading">@Model.Value("ourServicesService4Heading")</h4>
           <div class="card-image">
-            <img src="./images/services-4.png"></img>            
+            <img src="@ourServicesImage4"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("ourServicesService4Paragraph")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Financial Advisor</h4>
+          <h4 class="card-heading">@Model.Value("ourServicesService5Heading")</h4>
           <div class="card-image">
-            <img src="./images/services-5.png"></img>            
+            <img src="@ourServicesImage5"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("ourServicesService5Paragraph")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Statistic Advisors</h4>
+          <h4 class="card-heading">@Model.Value("ourServicesService6Heading")</h4>
           <div class="card-image">
-            <img src="./images/services-6.png"></img>            
+            <img src="@ourServicesImage6"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("ourServicesService6Paragraph")</p>
         </div>
       </div>
     </div>
@@ -103,15 +129,15 @@
   <section id="trusted-section">
     <div class="container">
       <div class="img-container">
-        <img id="map-img" src="./images/dot-map 1.png"></img>
-        <img id="team-img" src="./images/team.png"></img>
+        <img id="map-img" src="@trustedImageBackground"></img>
+        <img id="team-img" src="@trustedImageMain"></img>
       </div>
       
       <div class="content">
-        <h2>We are trusted by more than</h2>
-        <h2 class="beige">4.000+ clients</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis molestie nulla. Nam accumsanporttitor arcu,ac tincidunt lectus tincidunt sed.</p>
-        <a href="#" class="btn-green">Read our story</a>
+        <h2>@Model.Value("trustedHeading")</h2>
+        <h2 class="beige">@Model.Value("trustedHeadingCount")</h2>
+        <p>@Model.Value("trustedParagraph")</p>
+        <a href="#" class="btn-green">@Model.Value("trustedButtonText")</a>
       </div>
     </div>
   </section>
@@ -119,68 +145,68 @@
     <div class="container">
       <img id="dotmap-img" src="./images/Dot map.svg"></img>
       <div class="section-header">
-        <h3>SUCCESS STORIES</h3>
-        <h2>Success Story</h2>
+        <h3>@Model.Value("successStoriesHeading")</h3>
+        <h2>@Model.Value("successStoriesSubheading")</h2>
       </div>
       <div class="achievments-grid">
         <div class="grid-item">
-          <span>689</span>
-          <p>More than 100 customers has been served</p>
+          <span>@Model.Value("successStoriesCustomersCount")</span>
+          <p>@Model.Value("successStoriesCustomersParagraph")</p>
         </div>
         <div class="grid-item">
-          <span>370</span>
-          <p>More than 370 projects has been completed</p>
+          <span>@Model.Value("successStoriesProjectsCount")</span>
+          <p>@Model.Value("successStoriesProjectsParagraph")</p>
         </div>
         <div class="grid-item">
-          <span>125</span>
-          <p>More than 125 branches has been established in Europe and America</p>
+          <span>@Model.Value("successStoriesBranchesCount")</span>
+          <p>@Model.Value("successStoriesBranchesParagraph")</p>
         </div>
       </div>
     </div>
-    <img id="success-img" src="./images/success-image.png"></img>
+    <img id="success-img" src="@successStoriesImage"></img>
   </section>
   <section id="recent-projects-section">
     <div class="container page-section">
-      <h3>OUR PROJECTS</h3>
-      <h2>Recent projects</h2>
+      <h3>@Model.Value("ourProjectsHeading")</h3>
+      <h2>@Model.Value("ourProjectsSubheading")</h2>
     </div>
     <div class="recent-projects-grid">
       <a href="#" class="box">
-        <img class="box-image" src="./images/pj1.png" alt="Recent project image 1"></img>
+        <img class="box-image" src="@ourProjects1Image" alt="Recent project image 1"></img>
         <div class="box-footer">
           <div class="box-footer-text">
-            <h5>Annual Report for Juva Inc.</h5>
-            <p>Financial Services</p>
+            <h5>@Model.Value("ourProjectsProject1Heading")</h5>
+            <p>@Model.Value("ourProjectsProject1Subheading")</p>
           </div>
           <img src="./images/Arrow-Vector.svg"></img>
         </div>
       </a>
       <a href="#" class="box">
-        <img class="box-image" src="./images/pj2.png" alt="Recent project image 1"></img>
+        <img class="box-image" src="@ourProjects2Image" alt="Recent project image 1"></img>
         <div class="box-footer">
           <div class="box-footer-text">
-            <h5>Business Insights for SP Group Inc.</h5>
-            <p>Financial Services</p>
+            <h5>@Model.Value("ourProjectsProject2Heading")</h5>
+            <p>@Model.Value("ourProjectsProject2Subheading")</p>
           </div>
           <img src="./images/Arrow-Vector.svg"></img>
         </div>
       </a>
       <a href="#" class="box">
-        <img class="box-image" src="./images/pj3.png" alt="Recent project image 1"></img>
+        <img class="box-image" src="@ourProjects3Image" alt="Recent project image 1"></img>
         <div class="box-footer">
           <div class="box-footer-text">
-            <h5>Financial Advisors to Irra Corp Inc.</h5>
-            <p>Financial Services</p>
+            <h5>@Model.Value("ourProjectsProject3Heading")</h5>
+            <p>@Model.Value("ourProjectsProject3Subheading")</p>
           </div>
           <img src="./images/Arrow-Vector.svg"></img>
         </div>
       </a>
       <a href="#" class="box">
-        <img class="box-image" src="./images/pj4.png" alt="Recent project image 1"></img>
+        <img class="box-image" src="@ourProjects4Image" alt="Recent project image 1"></img>
         <div class="box-footer">
           <div class="box-footer-text">
-            <h5>Budget Planning for Buccura Inc.</h5>
-            <p>Financial Services</p>
+            <h5>@Model.Value("ourProjectsProject4Heading")</h5>
+            <p>@Model.Value("ourProjectsProject4Subheading")</p>
           </div>
           <img class="arrow-right" src="./images/Arrow-Vector.svg"></img>
         </div>
@@ -189,12 +215,13 @@
   </section>
   <section id="brands-section">
     <div class="container">
-      <img src="./images/brand1.png"></img>
-      <img src="./images/brand2.png"></img>
-      <img src="./images/brand3.png"></img>
-      <img src="./images/brand4.png"></img>
-      <img src="./images/brand5.png"></img>
-      <img src="./images/brand6.png"></img>
+      <img src="@brandsImage1"></img>
+      <img src="@brandsImage2"></img>
+      <img src="@brandsImage3"></img>
+      <img src="@brandsImage4"></img>
+      <img src="@brandsImage5"></img>
+      <img src="@brandsImage6"></img>
+
     </div>
   </section>
   <script>

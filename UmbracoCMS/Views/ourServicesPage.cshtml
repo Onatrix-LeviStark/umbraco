@@ -3,102 +3,113 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+
+  var ourServicesImage1 = Model.Value<IPublishedContent>("serviceImage1")?.Url() ?? "";
+  var ourServicesImage2 = Model.Value<IPublishedContent>("serviceImage2")?.Url() ?? "";
+  var ourServicesImage3 = Model.Value<IPublishedContent>("serviceImage3")?.Url() ?? "";
+  var ourServicesImage4 = Model.Value<IPublishedContent>("serviceImage4")?.Url() ?? "";
+  var ourServicesImage5 = Model.Value<IPublishedContent>("serviceImage5")?.Url() ?? "";
+  var ourServicesImage6 = Model.Value<IPublishedContent>("serviceImage6")?.Url() ?? "";
+  
+  
+  var contactInfoImage = Model.Value<IPublishedContent>("contactInfoImage")?.Url() ?? "";
+  var contactInfoBackground = Model.Value<IPublishedContent>("contactInfoBackground")?.Url() ?? "";
 }
 
-<section class="atf">
+  <section class="atf">
     <img src="./images/earth-down.png" class="earth-down"></img>
     <img src="./images/earth-up.png" class="earth-up"></img>
 
     <div class="atf-content">
-      <h1>@Model.Value("pageTitle")</h1>
+      <h1>@Model.Value("atfHeading")</h1>
       <nav class="breadcrumb-nav">
-        <a href="home.html">Home</a>
+        <a href="@Model.Value("breadcrumbLink1Url")">@Model.Value("breadcrumbLink1Text")</a>
         <img src="./images/Arrow-Vector-Black.svg"></img>
-        <a href="#">Our services</a>
+        <a href="@Model.Value("breadcrumbLink2Url")">@Model.Value("breadcrumbLink2Text")</a>
       </nav>
     </div>
-  </section>
+  </section>  
   <section id="our-services-section">
     <div class="container page-section">
-      <h2>We Provide The Solutions<br>To Grow Your Business Faster</h2>
+      <h2>@Model.Value("ourServicesHeading")</h2>
       <div class="grid-container">
         <div class="card">
-          <h4 class="card-heading">Risk Management</h4>
+          <h4 class="card-heading">@Model.Value("serviceHeading1")</h4>
           <div class="card-image">
-            <img src="./images/services-1.png"></img>            
+            <img src="@ourServicesImage1"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("serviceParagraph1")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Bonds & Commodities</h4>
+          <h4 class="card-heading">@Model.Value("serviceHeading2")</h4>
           <div class="card-image">
-            <img src="./images/services-2.png"></img>            
+            <img src="@ourServicesImage2"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("serviceParagraph2")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Assurance & Audits</h4>
+          <h4 class="card-heading">@Model.Value("serviceHeading3")</h4>
           <div class="card-image">
-            <img src="./images/services-3.png"></img>            
+            <img src="@ourServicesImage3"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("serviceParagraph3")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Tax and Trusts</h4>
+          <h4 class="card-heading">@Model.Value("serviceHeading4")</h4>
           <div class="card-image">
-            <img src="./images/services-4.png"></img>            
+            <img src="@ourServicesImage4"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("serviceParagraph4")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Financial Advisor</h4>
+          <h4 class="card-heading">@Model.Value("serviceHeading5")</h4>
           <div class="card-image">
-            <img src="./images/services-5.png"></img>            
+            <img src="@ourServicesImage5"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("serviceParagraph5")</p>
         </div>
         <div class="card">
-          <h4 class="card-heading">Statistic Advisors</h4>
+          <h4 class="card-heading">@Model.Value("serviceHeading6")</h4>
           <div class="card-image">
-            <img src="./images/services-6.png"></img>            
+            <img src="@ourServicesImage6"></img>            
           </div>
-          <p class="card-body">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+          <p class="card-body">@Model.Value("serviceParagraph6")</p>
         </div>
       </div>
     </div>
   </section>
   <section id="contact-details-section">
-    <div class="container">
-      <div class="img-container">
-        <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
-        <img class="img-person" src="./images/contact-details-section-person.png"></img>
+      <div class="container">
+        <div class="img-container">
+          <img class="img-vector" src="@contactInfoBackground"></img>
+          <img class="img-person" src="@contactInfoImage"></img>
+        </div>
+        <div class="section-body">
+          <h2>@Model.Value("contactInfoHeading")</h2>
+          <div class="element-group">
+            <img src="./images/Icon address.png"></img>
+            <div class="text-group">
+              <strong>@Model.Value("contactInfoAddressHeading")</strong>
+              <p>@Model.Value("contactInfoAddress")</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon phone.png"></img>
+            <div class="text-group">
+              <strong>@Model.Value("contactInfoPhoneHeading")</strong>
+              <p>@Model.Value("contactInfoPhone")</p>
+            </div>
+          </div>
+          <div class="element-group">
+            <img src="./images/Icon email.png"></img>
+            <div class="text-group">
+              <strong>@Model.Value("contactInfoEmailHeading")</strong>
+              <p>@Model.Value("contactInfoEmail")</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="section-body">
-        <h2>Let us know about <br>your next project</h2>
-        <div class="element-group">
-          <img src="./images/Icon address.png"></img>
-          <div class="text-group">
-            <strong>Office location</strong>
-            <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
-          </div>
-        </div>
-        <div class="element-group">
-          <img src="./images/Icon phone.png"></img>
-          <div class="text-group">
-            <strong>Phone number</strong>
-            <p>+46 8 123 456 75</p>
-          </div>
-        </div>
-        <div class="element-group">
-          <img src="./images/Icon email.png"></img>
-          <div class="text-group">
-            <strong>E-mail address</strong>
-            <p>sales@onatrix.com</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 	<style>
 		.atf {

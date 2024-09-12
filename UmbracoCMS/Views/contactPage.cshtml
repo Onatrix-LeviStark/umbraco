@@ -3,63 +3,75 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
+
+  var contactInfoImage = Model.Value<IPublishedContent>("contactInfoImage")?.Url() ?? "";
+  var contactInfoBackground = Model.Value<IPublishedContent>("contactInfoBackground")?.Url() ?? "";
+  var contactFormBackgroundImage = Model.Value<IPublishedContent>("contactFormBackgroundImage")?.Url() ?? "";
+
+  var brandsImage1 = Model.Value<IPublishedContent>("brandsImage1")?.Url() ?? "";
+  var brandsImage2 = Model.Value<IPublishedContent>("brandsImage2")?.Url() ?? "";
+  var brandsImage3 = Model.Value<IPublishedContent>("brandsImage3")?.Url() ?? "";
+  var brandsImage4 = Model.Value<IPublishedContent>("brandsImage4")?.Url() ?? "";
+  var brandsImage5 = Model.Value<IPublishedContent>("brandsImage5")?.Url() ?? "";
+  var brandsImage6 = Model.Value<IPublishedContent>("brandsImage6")?.Url() ?? "";
 }
 
 <main>
-    <section class="atf">
-      <img src="./images/earth-down.png" class="earth-down"></img>
-      <img src="./images/earth-up.png" class="earth-up"></img>
-  
-      <div class="atf-content">
-        <h1>@Model.Value("pageTitle")</h1>
-        <nav class="breadcrumb-nav">
-          <a href="home.html">Home</a>
-          <img src="./images/Arrow-Vector-Black.svg"></img>
-          <a href="#">Contact us</a>
-        </nav>
-      </div>
-    </section>      
+  <section class="atf">
+    <img src="./images/earth-down.png" class="earth-down"></img>
+    <img src="./images/earth-up.png" class="earth-up"></img>
+
+    <div class="atf-content">
+      <h1>@Model.Value("atfHeading")</h1>
+      <nav class="breadcrumb-nav">
+        <a href="@Model.Value("breadcrumbLink1Url")">@Model.Value("breadcrumbLink1Text")</a>
+        <img src="./images/Arrow-Vector-Black.svg"></img>
+        <a href="@Model.Value("breadcrumbLink2Url")">@Model.Value("breadcrumbLink2Text")</a>
+      </nav>
+    </div>
+    
+  </section>  
 
     <section id="contact-details-section">
       <div class="container">
         <div class="img-container">
-          <img class="img-vector" src="./images/contact-details-section-graphic.svg"></img>
-          <img class="img-person" src="./images/contact-details-section-person.png"></img>
+          <img class="img-vector" src="@contactInfoBackground"></img>
+          <img class="img-person" src="@contactInfoImage"></img>
         </div>
         <div class="section-body">
-          <h2>Let us know about <br>your next project</h2>
+          <h2>@Model.Value("contactInfoHeading")</h2>
           <div class="element-group">
             <img src="./images/Icon address.png"></img>
             <div class="text-group">
-              <strong>Office location</strong>
-              <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+              <strong>@Model.Value("contactInfoAddressHeading")</strong>
+              <p>@Model.Value("contactInfoAddress")</p>
             </div>
           </div>
           <div class="element-group">
             <img src="./images/Icon phone.png"></img>
             <div class="text-group">
-              <strong>Phone number</strong>
-              <p>+46 8 123 456 75</p>
+              <strong>@Model.Value("contactInfoPhoneHeading")</strong>
+              <p>@Model.Value("contactInfoPhone")</p>
             </div>
           </div>
           <div class="element-group">
             <img src="./images/Icon email.png"></img>
             <div class="text-group">
-              <strong>E-mail address</strong>
-              <p>sales@onatrix.com</p>
+              <strong>@Model.Value("contactInfoEmailHeading")</strong>
+              <p>@Model.Value("contactInfoEmail")</p>
             </div>
           </div>
         </div>
       </div>
-    </section>  
+    </section>
 
     <section id="map-section">
-      <img class="map-img" src="./images/map-1.png"></img>
+      <img class="map-img" src="@contactFormBackgroundImage"></img>
       <div class="container">
         <div class="section-heading">
-          <h3>REQUEST A CALL BACK</h3>
-          <h2>Let us know about your <br>next project</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+          <h3>@Model.Value("contactFormHeading")</h3>
+          <h2>@Model.Value("contactFormSubheading")</h2>
+          <p>@Model.Value("contactFormParagraph")</p>
         </div>
         <form>
           <div class="input-group">
@@ -84,15 +96,15 @@
       </div>
     </section>
     <section id="brands-section">
-      <div class="container">
-        <img src="./images/brand1.png"></img>
-        <img src="./images/brand2.png"></img>
-        <img src="./images/brand3.png"></img>
-        <img src="./images/brand4.png"></img>
-        <img src="./images/brand5.png"></img>
-        <img src="./images/brand6.png"></img>
-      </div>
-    </section>
+    <div class="container">
+      <img src="@brandsImage1"></img>
+      <img src="@brandsImage2"></img>
+      <img src="@brandsImage3"></img>
+      <img src="@brandsImage4"></img>
+      <img src="@brandsImage5"></img>
+      <img src="@brandsImage6"></img>
+    </div>
+  </section>
   </main>
 
 	<script>

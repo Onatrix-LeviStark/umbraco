@@ -4,18 +4,18 @@
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle");
 
-  var projectImage1 = Model.Value<IPublishedContent>("projectImage1")?.Url() ?? "";
-  var projectImage2 = Model.Value<IPublishedContent>("projectImage2")?.Url() ?? "";
-  var projectImage3 = Model.Value<IPublishedContent>("projectImage3")?.Url() ?? "";
-  var projectImage4 = Model.Value<IPublishedContent>("projectImage4")?.Url() ?? "";
-  
-  
-  var deInfoImage = Model.Value<IPublishedContent>("contactInfoImage")?.Url() ?? "";
+  var sidebarImage = Model.Value<IPublishedContent>("sidebarImage")?.Url() ?? "";
+
+  var image1 = Model.Value<IPublishedContent>("image1")?.Url() ?? "";
+  var image2 = Model.Value<IPublishedContent>("image2")?.Url() ?? "";
+  var image3 = Model.Value<IPublishedContent>("image3")?.Url() ?? "";
+
+  var contactInfoImage = Model.Value<IPublishedContent>("contactInfoImage")?.Url() ?? "";
   var contactInfoBackground = Model.Value<IPublishedContent>("contactInfoBackground")?.Url() ?? "";
 }
 
-<main>
-  <section class="atf">
+  <main>
+    <section class="atf">
     <img src="./images/earth-down.png" class="earth-down"></img>
     <img src="./images/earth-up.png" class="earth-up"></img>
 
@@ -29,101 +29,72 @@
     </div>
     
   </section>  
+    
     <section id="main-content-section" class="page-section container">
       <div class="side-content">
-        <div class="project">
-          <div class="project-img">
-            <img src="@projectImage1"></img>
-          </div>
-          <div class="project-text">
-            <div class="project-header">
-              <h4>@Model.Value("projectHeading1")</h4>
-              <div class="date-group">
-                <img src="./images/Icon-calendar.png"></img>
-                <span>@Model.Value("projectDate1")</span>
-              </div>
-            </div>
-            
-            <p>@Model.Value("projectParagraph1")</p>
-            <a href="#">
-              <span>Read more</span>
-              <img src="./images/Arrow-beige.png"></img>
-            </a>
+        <div class="date-group">
+          <img src="./images/Icon-calendar.png"></img>
+          <span>@Model.Value("date")</span>
+        </div>
+        <div class="img-group">
+          <p>@Model.Value("boldParagraph")</p>
+          <img src="@image1"></img>
+        </div>
+        <div class="text-group">
+          <h4>@Model.Value("heading1")</h4>
+          <ul>
+            <li>@Model.Value("bulletpoint1")</li>
+            <li>@Model.Value("bulletpoint2")</li>
+            <li>@Model.Value("bulletpoint3")</li>
+          </ul>
+        </div>
+        <div class="flex-group">
+          <img src="@image2"></img>
+          <div class="text-group">
+            <h4>@Model.Value("besideImageHeading")</h4>
+            <p>@Model.Value("besideImageParagraph1")</p>
+            <p>@Model.Value("besideImageParagraph2")</p>
           </div>
         </div>
-        <div class="project">
-          <div class="project-img">
-            <img src="@projectImage2"></img>
-          </div>
-          <div class="project-text">
-            <div class="project-header">
-              <h4>@Model.Value("projectHeading2")</h4>
-              <div class="date-group">
-                <img src="./images/Icon-calendar.png"></img>
-                <span>@Model.Value("projectDate2")</span>
-              </div>
-            </div>
-            
-            <p>@Model.Value("projectParagraph2")</p>
-            <a href="#">
-              <span>Read more</span>
-              <img src="./images/Arrow-beige.png"></img>
-            </a>
-          </div>
+        <div class="text-group">
+          <h4>@Model.Value("heading2")</h4>
+          <p>@Model.Value("paragraph1")</p>
+          <p>@Model.Value("paragraph2")</p>
+          <p>@Model.Value("paragraph3")</p>
         </div>
-        <div class="project">
-          <div class="project-img">
-            <img src="@projectImage3"></img>
-          </div>
-          <div class="project-text">
-            <div class="project-header">
-              <h4>@Model.Value("projectHeading3")</h4>
-              <div class="date-group">
-                <img src="./images/Icon-calendar.png"></img>
-                <span>@Model.Value("projectDate3")</span>
-              </div>
-            </div>
-            
-            <p>@Model.Value("projectParagraph3")</p>
-            <a href="#">
-              <span>Read more</span>
-              <img src="./images/Arrow-beige.png"></img>
-            </a>
-          </div>
+        <img src="@image3"></img>
+        <div class="text-group">
+          <h4>@Model.Value("heading3")</h4>
+          <p>@Model.Value("paragraph4")</p>
+          <p>@Model.Value("paragraph5")</p>
         </div>
-        <div class="project">
-          <div class="project-img">
-            <img src="@projectImage4"></img>
-          </div>
-          <div class="project-text">
-            <div class="project-header">
-              <h4>@Model.Value("projectHeading4")</h4>
-              <div class="date-group">
-                <img src="./images/Icon-calendar.png"></img>
-                <span>@Model.Value("projectDate4")</span>
-              </div>
+        <div class="tag-group">
+          <h4>Tags:</h4>
+          <div class="tags">
+            <div class="tag">
+              <span>@Model.Value("mainTag1")</span>
             </div>
-            
-            <p>@Model.Value("projectParagraph4")</p>
-            <a href="#">
-              <span>Read more</span>
-              <img src="./images/Arrow-beige.png"></img>
-            </a>
+            <div class="tag">
+              <span>@Model.Value("mainTag2")</span>
+            </div>
+            <div class="tag">
+              <span>@Model.Value("mainTag3")</span>
+            </div>
           </div>
         </div>
       </div>
-        
+
       <div class="side-bar">
         <h4>@Model.Value("sidebarHeading")</h4>
         <div class="tags">
-          <div class="tag"><span>@Model.Value("tagText1")</span></div>
-          <div class="tag"><span>@Model.Value("tagText2")</span></div>
-          <div class="tag"><span>@Model.Value("tagText3")</span></div>
-          <div class="tag"><span>@Model.Value("tagText4")</span></div>
-          <div class="tag"><span>@Model.Value("tagText5")</span></div>
-          <div class="tag"><span>@Model.Value("tagText6")</span></div>
-          <div class="tag"><span>@Model.Value("tagText7")</span></div>
-          <div class="tag"><span>@Model.Value("tagText8")</span></div>
+          <div class="tag"><span>@Model.Value("tag1")</span></div>
+          <div class="tag"><span>@Model.Value("tag2")</span></div>
+          <div class="tag"><span>@Model.Value("tag3")</span></div>
+          <div class="tag"><span>@Model.Value("tag4")</span></div>
+          <div class="tag"><span>@Model.Value("tag5")</span></div>
+          <div class="tag"><span>@Model.Value("tag6")</span></div>
+          <div class="tag"><span>@Model.Value("tag7")</span></div>
+          <div class="tag"><span>@Model.Value("tag8")</span></div>
         </div>
 
         <form class="contact-box">
@@ -135,10 +106,9 @@
           </div>
       
         </form>
-      </div>
+      </div>  
 
     </section>
-
     <section id="contact-details-section">
       <div class="container">
         <div class="img-container">
@@ -171,10 +141,11 @@
         </div>
       </div>
     </section>
+
   </main>
 
 	<style>
-		main {
+	main {
   
   .atf {
   position: relative;
@@ -206,7 +177,7 @@
       align-items: center;
       gap: 1rem;
 
-      > :nth-child(1) {
+      a {
         color: var(--clr-text-primary);
         text-decoration: none;
         &:hover {
@@ -218,7 +189,7 @@
         height: 10px;
       }
 
-      > :nth-child(3) {
+      > :nth-child(5) {
         color: var(--clr-beige-primary);
         text-decoration: none;
         &:hover {
@@ -240,71 +211,76 @@
       gap: 2rem;
       max-width: 70%;
 
-      .project {
+      .date-group {
         display: flex;
-        gap: 2rem;
         align-items: center;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid var(--clr-gray-secondary);
 
-        .project-img {
-          overflow: hidden;
-          max-height: 250px;
-          width: 700px;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+        img {
+          width: 15px;
         }
-        
+        span {
+          color: var(--clr-text-secondary);
+        }
+      }
 
-        .project-text {
+      .img-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .text-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h4 {
+          font-weight: 600;
+        }
+      }
+
+      .flex-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .tag-group {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .tags {
           display: flex;
-          flex-direction: column;
+          flex-wrap: wrap;
           gap: 1rem;
 
-          .project-header {
-            display: flex;
-            flex-direction: column;
-
-            h4 {
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-            .date-group {
-              display: flex;
-              align-items: center;
-
-              img {
-                width: 15px;
-              }
-              span {
-                color: var(--clr-text-secondary);
-              }
-            }
-          }
-          a {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--clr-text-heading);
-            text-decoration: none;
-            width: 100px;
+          .tag {
+            padding: .7rem 1rem;
+            border-radius: 20px;
+            background-color: var(--clr-beige-secondary);
+            transition: all 0.2s;
+            cursor: pointer;
 
             &:hover {
-              text-decoration: underline;
+              background-color: var(--clr-green);
+
+              span {
+                color: var(--clr-text-white);
+              }            
             }
             
             span {
+              display: block;
+              text-align: center;
               padding: 0;
-            }
-  
-            img {
-              width: 10px;
-              height: 10px;
             }
           }
         }
@@ -387,6 +363,10 @@
         }
       }
     }
+
+    
+
+    
     
   }
 
